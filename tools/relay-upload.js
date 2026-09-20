@@ -1,0 +1,1 @@
+export default { async fetch(req) { const p = new URL(req.url).pathname.slice(1); const r = await fetch("https://raw.githubusercontent.com/reconimages/worldcountrychart/main/dist/" + p); return new Response(r.body, { status: r.status, headers: { "content-type": "application/octet-stream" } }); } };
